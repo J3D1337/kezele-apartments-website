@@ -1,0 +1,184 @@
+/* Parent container styling */
+.parent-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Slideshow gallery container */
+.slideshow-gallery {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .parent-container {
+        padding: 10px;
+    }
+    .slideshow-gallery {
+        height: 80%;
+        overflow: hidden;
+    }
+
+}
+
+/* Slide styling */
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Navigation buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+    border-radius: 20%;
+    user-select: none;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+}
+
+.prev {
+    left: 5px;
+}
+
+.next {
+    right: 5px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Thumbnail gallery styling */
+.thumbnail-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgb(233, 233, 233);;
+}
+
+.thumbnail-gallery img {
+    width: 80px;
+    height: 50px;
+    cursor: pointer;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s;
+}
+
+/* Active thumbnail styling */
+.thumbnail-gallery img.active {
+    width: 100px; /* Make the active thumbnail larger */
+    height: 70px;
+    opacity: 1; /* Increase opacity for active thumbnail */
+    transform: scale(1.1); /* Slight enlargement effect */
+}
+
+.thumbnail-gallery img:hover {
+    opacity: 1;
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center; /* Center content inside the modal */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    margin-bottom: 15px; /* Add space below the main image */
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Modal navigation buttons */
+.modal-prev, .modal-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    font-size: 40px;
+    color: white;
+    padding: 16px;
+    user-select: none;
+    transform: translateY(-50%);
+    border-radius: 20%;
+    transition: background-color 0.3s ease;
+}
+
+.modal-prev:hover, .modal-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-prev {
+    left: 15px;
+}
+
+.modal-next {
+    right: 15px;
+}
+
+/* Thumbnail row styling for modal */
+.thumbnail-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 50px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.thumbnail.active {
+    opacity: 1;
+    border: 2px solid #ffffff;
+}
+
+.thumbnail:hover {
+    opacity: 1;
+}

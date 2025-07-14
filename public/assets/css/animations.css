@@ -1,0 +1,10 @@
+.fade-in-bottom {
+    opacity: 0;
+    transform: translateY(50px); /* Initial position below */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-bottom.show {
+    opacity: 1;
+    transform: translateY(0); /* Final position */
+}
